@@ -26,6 +26,9 @@ class Books extends Component {
             const cleanData = this.cleanData(data);
             this.setState({ books: cleanData });
         })
+        .catch((err) => {
+            console.log(err);
+        });
     }
 
     handleSort = (e) => {

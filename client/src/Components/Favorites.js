@@ -24,6 +24,9 @@ class Favorites extends Component {
             this.setState({ favorites: res.data })
             console.log(this.state);
         })
+        .catch((err) => {
+            console.log(err);
+        });
     };
 
     displayFavorites = (favorites) => {

@@ -7,6 +7,9 @@ router.get('/favorites', function(req, res) {
    Favorites.find({}).then(function(favorites) {
        res.send(favorites);
    })
+   .catch((err) => {
+    console.log(err);
+});
 });
 
 // add a new favorite to the database
@@ -14,6 +17,9 @@ router.post('/favorites', function(req, res) {
     Favorites.create(req.body)
     .then(function(favorite) {
         res.send(favorite);
+    })
+    .catch((err) => {
+        console.log(err);
     });
 });
 
@@ -21,6 +27,9 @@ router.post('/favorites', function(req, res) {
 router.delete('/favorites/:id', function(req, res) {
     Favorites.findByIdAndRemove({_id: req.params.id}).then(function(favorite) {
         res.send(favorite)
+    })
+    .catch((err) => {
+        console.log(err);
     });
 });
 
