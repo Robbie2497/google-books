@@ -15,7 +15,7 @@ app.use(express.json());
 app.use('/api', require('./routes/api'));
 
 
-mongoose.connect('mongodb://localhost/favorites',
+mongoose.connect(process.env.MONGODB_URI || "mongodb://robbie2497:Softwaredev269@ds049211.mlab.com:49211/heroku_zcmrz6l3",
 { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false }
 );
 
