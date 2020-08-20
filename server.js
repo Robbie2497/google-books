@@ -9,7 +9,7 @@ const app = express();
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-  app.use(express.static('../client/public'));
+  app.use(express.static('public'));
 
 // initialize routes
 app.use('/api', require('./routes/api'));
