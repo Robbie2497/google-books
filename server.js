@@ -9,7 +9,7 @@ const app = express();
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('client/build'));
 
 // initialize routes
 app.use('/api', require('./routes/api'));
@@ -25,12 +25,10 @@ console.log('Connection to database has been made...');
 console.log('Connection Error' + error);
 });
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, 'public'))
+
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
-// });
 
 
 app.listen(PORT, function() {
