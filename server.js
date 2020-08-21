@@ -27,7 +27,7 @@ console.log('Connection Error' + error);
 
 app.get("*", (req, res) => {
   //change public back to build when deploying
-  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 
