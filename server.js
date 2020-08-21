@@ -25,9 +25,15 @@ console.log('Connection to database has been made...');
 console.log('Connection Error' + error);
 });
 
+<<<<<<< HEAD
 
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+=======
+app.get("*", (req, res) => {
+  //change public back to build when deploying
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+>>>>>>> 436ee5a99e9eae882f2780a92577d51fc4dd1b9b
 });
 
 
