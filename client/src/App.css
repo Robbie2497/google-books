@@ -128,7 +128,7 @@ text-decoration: underline;
 
 .viewBtn {
   position: relative;
-  left: 30px;
+  margin-top: 10px;
 }
 
 body {
@@ -142,10 +142,7 @@ body {
 
 .book-card-container {
   background-color: white;
-}
-
-.book-card-container {
-  background-color: white;
+  margin-top: 10px;
 }
 
 .black {

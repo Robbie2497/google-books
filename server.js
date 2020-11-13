@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+require("dotenv").config();
+
 
 
 const PORT = process.env.PORT || 3001;
@@ -15,15 +17,15 @@ app.use(express.static('client/build'));
 app.use('/api', require('./routes/api'));
 
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://robbie2497:Softwaredev269@ds049211.mlab.com:49211/heroku_zcmrz6l3",
-{ useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false }
-);
-
-mongoose.connection.once('open', function () {
-console.log('Connection to database has been made...');
-}).on('error', function (error) {
-console.log('Connection Error' + error);
-});
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING, 
+  { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false }
+  );
+  
+  mongoose.connection.once('open', function () {
+    console.log('Connection to database has been made...');
+    }).on('error', function (error) {
+    console.log('Connection Error' + error);
+    });
 
 app.get("*", (req, res) => {
   //change public back to build when deploying

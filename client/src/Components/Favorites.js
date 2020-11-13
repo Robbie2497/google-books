@@ -40,9 +40,6 @@ class Favorites extends Component {
         
         return favorites.map((favorites, i) => (
             <div>
-            <i className="fas fa-book fa-2x favHeader" />
-            <h1 className="favHeader">Favorite Books</h1>
-            <a className="left-nav" href="/" rel="Home">Home</a>
             <div className="container book-card-container">
         <div className="card-container">
         </div>
