@@ -31,8 +31,7 @@ class Favorites extends Component {
 
     displayFavorites = (favorites) => {
         if(!favorites.length) return <div className="white">
-            <h1>No Favorites Saved Yet</h1>
-            <a className="white" href="/" rel="Home">Click here to go Home</a>
+            <h1 className="black">No Favorites Saved Yet</h1>
             </div>
 
         console.log("display favorites works...")
